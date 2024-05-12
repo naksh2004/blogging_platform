@@ -56,6 +56,38 @@ Copy code
 curl -X POST "http://localhost:8000/posts/" -H "Content-Type: application/json" -d '{"title": "First Post", "content": "This is my first post!", "author": "John Doe"}'
 (Similar requests for other endpoints)
 
+Get a Post:
+
+bash
+Copy code
+curl -X GET "http://localhost:8000/posts/{post_id}/"
+Update a Post:
+
+bash
+Copy code
+curl -X PUT "http://localhost:8000/posts/{post_id}/" -H "Content-Type: application/json" -d '{"title": "Updated Title", "content": "Updated content", "author": "John Doe"}'
+Delete a Post:
+
+bash
+Copy code
+curl -X DELETE "http://localhost:8000/posts/{post_id}/"
+Add a Comment:
+
+bash
+Copy code
+curl -X POST "http://localhost:8000/posts/{post_id}/comments/" -H "Content-Type: application/json" -d '{"text": "Great post!", "author": "Jane Doe"}'
+Like a Post:
+
+bash
+Copy code
+curl -X POST "http://localhost:8000/posts/{post_id}/like/"
+Dislike a Post:
+
+bash
+Copy code
+curl -X POST "http://localhost:8000/posts/{post_id}/dislike/"
+
+
 Step 8: Deactivate Virtual Environment
 After you're done testing, deactivate the virtual environment.
 Copy code
